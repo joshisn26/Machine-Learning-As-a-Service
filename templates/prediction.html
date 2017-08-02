@@ -1,0 +1,93 @@
+{% extends "mainpage.html" %}
+
+{% block content %}
+<div class="container">
+
+<h2>Get interest rate prediction</h2>
+<div class="btn-group" role="group" aria-label="Samples">
+<button type="button" class="btn btn-primary btn-lg" id= "case1">Case 1</button>
+<button type="button" class="btn btn-primary btn-lg" id="case2">Case 2</button>
+</div>
+</br>
+<form method="POST" action="/prediction" id="predict">
+ 
+<div class="form-group">      	
+	{{ form.credit_score.label }}
+	{{ form.credit_score }}
+</div>
+<div class="form-group">      	
+	{{ form.first_payment_date.label }}
+	{{ form.first_payment_date }}
+</div>
+<div class="form-group">      	
+	{{ form.fthb_flag.label }}
+	{{ form.fthb_flag }}
+</div>
+<div class="form-group">      	
+	{{ form.matr_date.label }}
+	{{ form.matr_date }}
+</div>
+<div class="form-group">      	
+	{{ form.msa.label }}
+	{{ form.msa }}
+</div>
+<div class="form-group">      	
+	{{ form.mortage_insurance_pct.label }}
+	{{ form.mortage_insurance_pct }}
+</div>
+<div class="form-group">      	
+	{{ form.no_of_units.label }}
+	{{ form.no_of_units }}
+</div>
+<div class="form-group">      	
+	{{ form.occupancy_status.label }}
+	{{ form.occupancy_status }}
+</div>
+<div class="form-group">      	
+	{{ form.cltv.label }}
+	{{ form.cltv }}
+</div>
+<div class="form-group">      	
+	{{ form.dti_ratio.label }}
+	{{ form.dti_ratio }}
+</div>
+<div class="form-group">      	
+	{{ form.original_upb.label }}
+	{{ form.original_upb }}
+</div>
+ {{ form.submit(class="btn-primary") }}
+</form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script>
+	function populate(form, data) {
+	  $.each(data, function(key, value){
+	    $('[name='+key+']', form).val(value);
+	  });
+	}
+	
+data1 =	
+		{
+			'credit_score': "715",   
+			'first_payment_date': "200508",   
+			'fthb_flag': "2",   
+			'matr_date': "203507",   
+			'msa': "33700",   
+			'mortage_insurance_pct': "58",   
+			'no_of_units': "1",   
+			'occupancy_status': "2",   
+			'cltv': "0",   
+			'dti_ratio': "41",   
+			'original_upb': "214000"
+		};
+		
+	$(document).ready(function(){
+	$("#case1").click(function(){
+       populate('#predict', data1);
+    });
+	});
+	
+	
+  </script>
+{% endblock %}
