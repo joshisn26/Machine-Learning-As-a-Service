@@ -5,12 +5,16 @@
 
 <h2>Get interest rate prediction</h2>
 <div class="btn-group" role="group" aria-label="Samples">
-<button type="button" class="btn btn-primary btn-lg" id= "case1">Case 1</button>
-<button type="button" class="btn btn-primary btn-lg" id="case2">Case 2</button>
+<button type="button" class="btn btn-primary btn-lg" id= "case1">Case1</button>
+<button type="button" class="btn btn-primary btn-lg" id="case2">Case2</button>
 </div>
 </br>
 <form method="POST" action="/prediction" id="predict">
  
+<div class="form-group" style="display:none;">     
+	{{ form.id.label }}
+	{{ form.id }}
+</div>
 <div class="form-group">      	
 	{{ form.credit_score.label }}
 	{{ form.credit_score }}
@@ -68,7 +72,7 @@
 	}
 	
 data1 =	
-		{
+		{	'id' : "1" ,
 			'credit_score': "715",   
 			'first_payment_date': "200508",   
 			'fthb_flag': "2",   
@@ -82,9 +86,27 @@ data1 =
 			'original_upb': "214000"
 		};
 		
+data2 =	
+		{	'id' : "2" ,
+			'credit_score': "698",   
+			'first_payment_date': "200506",   
+			'fthb_flag': "2",   
+			'matr_date': "202505",   
+			'msa': "28940",   
+			'mortage_insurance_pct': "58",   
+			'no_of_units': "1",   
+			'occupancy_status': "2",   
+			'cltv': "0",   
+			'dti_ratio': "38",   
+			'original_upb': "92000"
+		};
+		
 	$(document).ready(function(){
 	$("#case1").click(function(){
        populate('#predict', data1);
+    });
+	$("#case2").click(function(){
+       populate('#predict', data2);
     });
 	});
 	

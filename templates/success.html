@@ -2,8 +2,17 @@
 
 {% block content %}
 <div class="container">
-<h3>Predicted interest rate is: {{ pred_int_rate }}</h3>
+{% if caseno == '1' %}
 <h3>Actual interest rate is: 5.75</h3>
+{% else %}
+<h3>Actual interest rate is: 5.625</h3>
+{% endif %}
+<h2>Linear Regression:</h2>
+<h3>Predicted interest rate is: {{ pred_int_rate[0] }}</h3>
+<h2>Random Forest:</h2>
+<h3>Predicted interest rate is: {{ pred_int_rate[1] }}</h3>
+<h2>Neural Network:</h2>
+<h3>Predicted interest rate is: {{ pred_int_rate[2] }}</h3>
 </div>
 
 {% endblock %}

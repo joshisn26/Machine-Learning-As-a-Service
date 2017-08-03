@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired
 
 
 class predictionForm(Form):
-	#id1 = StringField('ID')
+	id = StringField('ID')
 	credit_score = StringField('Credit Score', validators=[DataRequired(message ="Please enter credit score")])	
 	first_payment_date = StringField('First Payment Date', validators=[DataRequired(message ="Please enter a First Payment Date")])
 	fthb_flag = StringField('First Time house Buyer flag', validators=[DataRequired(message ="Please enter a fthb flag")])
