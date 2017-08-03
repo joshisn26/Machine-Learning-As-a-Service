@@ -1,0 +1,26 @@
+{% extends "mainpage.html" %}
+
+{% block content %}
+<div class="container">
+{% if caseno == '1' %}
+<h3>Current interest rate is: 7.375 </h3>
+<h3>Current UPB is: 99405.61 </h3> 
+<h3>Deliquent is: 0 </h3>
+{% else %}
+<h3>Current interest rate is: 6.125 </h3>
+<h3>Current UPB is: 92431.55 </h3> 
+<h3>Deliquent is: 1 </h3>
+{% endif %}
+<h2>Logistic Regression:</h2>
+<h3> Scored Probability for Class "0" is: {{ values[0] }}</h3>
+<h3> Scored Probability for Class "1" is: {{ values[1] }} </h3>
+<h3> Scored Labels is: {{ values[2]}} </h3>
+<h2>Decision Forest:</h2>
+<h3> Scored Probabilities is: {{ values[3] }}</h3> 
+<h3> Scored Labels is: {{ values[4] }}</h3>
+<h2>Neural Network:</h2>
+<h3> Scored Probabilities is: {{ values[5] }}</h3> 
+<h3> Scored Labels is: {{ values[6] }}</h3>
+</div>
+
+{% endblock %}

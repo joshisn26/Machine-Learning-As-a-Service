@@ -5,6 +5,199 @@
 
 <div class="container">
 
-<h2>Get interest rate classification"</h2>
-
+<h2>Classification Models</h2>
+<div class="btn-group" role="group" aria-label="Samples">
+<button type="button" class="btn btn-primary btn-lg" id= "case1">Case 1</button>
+<button type="button" class="btn btn-primary btn-lg" id="case2">Case 2</button>
 </div>
+</br>
+<form method="POST" action="/classification" id="classification">
+ 
+<div class="form-group" style="display:none;">     
+	{{ form.id.label }}
+	{{ form.id }}
+</div>
+<div class="form-group">      	
+	{{ form.month.label }}
+	{{ form.month }}
+</div>
+<div class="form-group">      	
+	{{ form.current_actual_upb.label }}
+	{{ form.current_actual_upb }}
+</div>
+<div class="form-group">      	
+	{{ form.delq_status.label }}
+	{{ form.delq_status }}
+</div>
+<div class="form-group">      	
+	{{ form.loan_age.label }}
+	{{ form.loan_age }}
+</div>
+<div class="form-group">      	
+	{{ form.rem_months.label }}
+	{{ form.rem_months }}
+</div>
+<div class="form-group">      	
+	{{ form.zero_balance_code.label }}
+	{{ form.zero_balance_code }}
+</div>
+<div class="form-group">      	
+	{{ form.zero_bal_date.label }}
+	{{ form.zero_bal_date }}
+</div>
+<div class="form-group">      	
+	{{ form.current_int_rate.label }}
+	{{ form.current_int_rate }}
+</div>
+<div class="form-group">      	
+	{{ form.current_def_upb.label }}
+	{{ form.current_def_upb }}
+</div>
+<div class="form-group">      	
+	{{ form.ddlpi.label }}
+	{{ form.ddlpi }}
+</div>
+<div class="form-group">      	
+	{{ form.mi_recoveries.label }}
+	{{ form.mi_recoveries }}
+</div>
+<div class="form-group">      	
+	{{ form.net_sales_proceeds.label }}
+	{{ form.net_sales_proceeds }}
+</div>
+<div class="form-group">      	
+	{{ form.non_mi_recoveries.label }}
+	{{ form.non_mi_recoveries }}
+</div>
+<div class="form-group">      	
+	{{ form.expenses.label }}
+	{{ form.expenses }}
+</div>
+<div class="form-group">      	
+	{{ form.maint_pres_costs.label }}
+	{{ form.maint_pres_costs }}
+</div>
+<div class="form-group">      	
+	{{ form.taxes_ins.label }}
+	{{ form.taxes_ins }}
+</div>
+<div class="form-group">      	
+	{{ form.misc_expenses.label }}
+	{{ form.misc_expenses }}
+</div>
+<div class="form-group">      	
+	{{ form.actual_loss_calc.label }}
+	{{ form.actual_loss_calc }}
+</div>
+<div class="form-group">      	
+	{{ form.modification_cost.label }}
+	{{ form.modification_cost }}
+</div>
+<div class="form-group">      	
+	{{ form.repurchase_flag_0.label }}
+	{{ form.repurchase_flag_0 }}
+</div>
+<div class="form-group">      	
+	{{ form.repurchase_flag_N.label }}
+	{{ form.repurchase_flag_N }}
+</div>
+<div class="form-group">      	
+	{{ form.repurchase_flag_Y.label }}
+	{{ form.repurchase_flag_Y }}
+</div>
+<div class="form-group">      	
+	{{ form.modification_flag_0.label }}
+	{{ form.modification_flag_0 }}
+</div>
+<div class="form-group">      	
+	{{ form.modification_flag_Y.label }}
+	{{ form.modification_flag_Y }}
+</div>
+<div class="form-group">      	
+	{{ form.Deliquent.label }}
+	{{ form.Deliquent }}
+</div>
+ {{ form.submit(class="btn-primary") }}
+</form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script>
+	function populate(form, data) {
+	  $.each(data, function(key, value){
+	    $('[name='+key+']', form).val(value);
+	  });
+	}
+	
+data1 =	
+		{
+            'id': "1",
+            'month': "200201",   
+            'current_actual_upb': "99405.61",   
+            'delq_status': "0",   
+            'loan_age': "30",   
+            'rem_months': "330",   
+            'zero_balance_code': "0",   
+            'zero_bal_date': "0",   
+            'current_int_rate': "7.375",   
+            'current_def_upb': "0",   
+            'ddlpi': "0",   
+            'mi_recoveries': "0",   
+            'net_sales_proceeds': "0",   
+            'non_mi_recoveries': "0",   
+            'expenses': "0",   
+            'legal_costs': "0",   
+            'maint_pres_costs': "0",   
+            'taxes_ins': "0",   
+            'misc_expenses': "0",   
+            'actual_loss_calc': "0",   
+            'modification_cost': "0",   
+            'repurchase_flag_0': "1",   
+            'repurchase_flag_N': "0",   
+            'repurchase_flag_Y': "0",   
+            'modification_flag_0': "1",   
+            'modification_flag_Y': "0",   
+            'Deliquent': "0", 
+        };
+data2 =	
+		{	'id' : "2" ,
+			'month': "200502",   
+            'current_actual_upb': "92431.55",   
+            'delq_status': "1",   
+            'loan_age': "69",   
+            'rem_months': "290",   
+            'zero_balance_code': "0",   
+            'zero_bal_date': "0",   
+            'current_int_rate': "6.125",   
+            'current_def_upb': "0",   
+            'ddlpi': "0",   
+            'mi_recoveries': "0",   
+            'net_sales_proceeds': "0",   
+            'non_mi_recoveries': "0",   
+            'expenses': "0",   
+            'legal_costs': "0",   
+            'maint_pres_costs': "0",   
+            'taxes_ins': "0",   
+            'misc_expenses': "0",   
+            'actual_loss_calc': "0",   
+            'modification_cost': "0",   
+            'repurchase_flag_0': "1",   
+            'repurchase_flag_N': "0",   
+            'repurchase_flag_Y': "0",   
+            'modification_flag_0': "1",   
+            'modification_flag_Y': "0",   
+            'Deliquent': "1", 
+		};
+		
+	$(document).ready(function(){
+	$("#case1").click(function(){
+       populate('#classification', data1);
+    });
+    $("#case2").click(function(){
+       populate('#classification', data2);
+    });
+	});
+	
+	
+  </script>
+{% endblock %}
