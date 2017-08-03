@@ -136,6 +136,12 @@ def logistic(body, output):
         #reader = codecs.getreader("utf-8")
         response_dict = json.loads(response)
         #response_dict = req.json()
+        output.append(response_dict['Results']['output1'][0]["current_int_rate"])
+        int_rate = response_dict['Results']['output1'][0]["current_int_rate"]
+        output.append(response_dict['Results']['output1'][0]["current_actual_upb"])
+        upb = response_dict['Results']['output1'][0]["current_actual_upb"]
+        output.append(response_dict['Results']['output1'][0]["Deliquent"])
+        deliq = response_dict['Results']['output1'][0]["Deliquent"]
         output.append(response_dict['Results']['output1'][0]["Scored Probabilities for Class " + '"0"'])
         scored_0 = response_dict['Results']['output1'][0]["Scored Probabilities for Class " + '"0"']
         output.append(response_dict['Results']['output1'][0]["Scored Probabilities for Class " + '"1"'])
